@@ -24,7 +24,10 @@ router.get('/google/callback',
     (req, res) => {
         const token = req.user.getSignedJwtToken();
         // Redirect to frontend
-        const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+        let clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+        if (!clientUrl.startsWith('http')) {
+            clientUrl = `https://${clientUrl}`;
+        }
         res.redirect(`${clientUrl}/auth/success?token=${token}`);
     }
 );
