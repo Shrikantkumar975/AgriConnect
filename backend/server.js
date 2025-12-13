@@ -11,6 +11,7 @@ const http = require('http');
 const { initSocket } = require('./utils/socket');
 
 const app = express();
+app.set('trust proxy', 1); // Trust first proxy (Render)
 const server = http.createServer(app);
 
 // Middleware
