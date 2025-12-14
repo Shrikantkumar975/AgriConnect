@@ -20,6 +20,8 @@ const Header = () => {
         { name: 'Marketplace', path: '/marketplace', roles: ['buyer', 'farmer', 'admin'] },
         { name: 'My Crops', path: '/my-crops', roles: ['farmer'] },
         { name: 'Add Crop', path: '/add-crop', roles: ['farmer'] },
+        { name: 'My Warehouse', path: '/warehouse-dashboard', roles: ['warehouse_owner'] },
+        { name: 'Find Storage', path: '/warehouses', roles: ['farmer'] },
         { name: 'Incoming Orders', path: '/farmer-orders', roles: ['farmer'] },
         { name: 'Cart', path: '/cart', roles: ['buyer'] },
         { name: 'My Orders', path: '/orders', roles: ['buyer'] },

@@ -20,6 +20,8 @@ import OrderHistory from './pages/buyer/OrderHistory';
 import FarmerOrders from './pages/farmer/FarmerOrders';
 import Home from './pages/common/Home';
 import CropDetails from './pages/common/CropDetails';
+import WarehouseOwnerDashboard from './pages/warehouse/WarehouseOwnerDashboard';
+import WarehouseList from './pages/warehouse/WarehouseList';
 
 import MainLayout from './components/common/MainLayout';
 
@@ -135,6 +137,28 @@ function App() {
                     <ProtectedRoute>
                       <MainLayout>
                         <FarmerOrders />
+                      </MainLayout>
+                    </ProtectedRoute>
+                  }
+                />
+
+                {/* Warehouse Routes */}
+                <Route
+                  path="/warehouse-dashboard"
+                  element={
+                    <ProtectedRoute>
+                      <MainLayout>
+                        <WarehouseOwnerDashboard />
+                      </MainLayout>
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/warehouses"
+                  element={
+                    <ProtectedRoute>
+                      <MainLayout>
+                        <WarehouseList />
                       </MainLayout>
                     </ProtectedRoute>
                   }

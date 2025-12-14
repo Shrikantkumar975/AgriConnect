@@ -38,6 +38,8 @@ const chatRoutes = require('./routes/chatRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
+const warehouseRoutes = require('./routes/warehouseRoutes');
+const storageRequestRoutes = require('./routes/storageRequestRoutes');
 
 // Routes
 app.use('/api/auth', authRoutes);
@@ -46,6 +48,8 @@ app.use('/api/chats', chatRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/payment', paymentRoutes);
+app.use('/api/warehouses', warehouseRoutes);
+app.use('/api/storage-requests', storageRequestRoutes);
 
 // Serve static files
 const path = require('path');

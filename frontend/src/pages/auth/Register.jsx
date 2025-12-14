@@ -3,7 +3,7 @@ import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../context/AuthContext';
 import { toast } from 'react-toastify';
-import { FaGoogle, FaUser, FaTractor } from 'react-icons/fa';
+import { FaGoogle, FaUser, FaTractor, FaWarehouse } from 'react-icons/fa';
 
 const Register = () => {
     const { register, handleSubmit, formState: { errors }, setValue } = useForm();
@@ -50,18 +50,18 @@ const Register = () => {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
                         {/* Farmer Card */}
                         <div
                             onClick={() => setRole('farmer')}
-                            className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer border border-transparent hover:border-green-500 group"
+                            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer border border-transparent hover:border-green-500 group"
                         >
                             <div className="flex flex-col items-center">
                                 <div className="p-4 bg-green-100 dark:bg-green-900 rounded-full mb-4 group-hover:bg-green-600 transition-colors">
-                                    <FaTractor className="h-12 w-12 text-green-600 dark:text-green-400 group-hover:text-white transition-colors" />
+                                    <FaTractor className="h-10 w-10 text-green-600 dark:text-green-400 group-hover:text-white transition-colors" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">I am a Farmer</h3>
-                                <p className="mt-2 text-center text-gray-500 dark:text-gray-400">
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white">I am a Farmer</h3>
+                                <p className="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">
                                     Sell your produce directly to buyers and manage your farm.
                                 </p>
                             </div>
@@ -70,15 +70,31 @@ const Register = () => {
                         {/* Buyer Card */}
                         <div
                             onClick={() => setRole('buyer')}
-                            className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer border border-transparent hover:border-blue-500 group"
+                            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer border border-transparent hover:border-blue-500 group"
                         >
                             <div className="flex flex-col items-center">
                                 <div className="p-4 bg-blue-100 dark:bg-blue-900 rounded-full mb-4 group-hover:bg-blue-600 transition-colors">
-                                    <FaUser className="h-12 w-12 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors" />
+                                    <FaUser className="h-10 w-10 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">I am a Buyer</h3>
-                                <p className="mt-2 text-center text-gray-500 dark:text-gray-400">
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white">I am a Buyer</h3>
+                                <p className="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">
                                     Discover fresh crops and connect with local farmers.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Warehouse Owner Card */}
+                        <div
+                            onClick={() => setRole('warehouse_owner')}
+                            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer border border-transparent hover:border-orange-500 group"
+                        >
+                            <div className="flex flex-col items-center">
+                                <div className="p-4 bg-orange-100 dark:bg-orange-900 rounded-full mb-4 group-hover:bg-orange-600 transition-colors">
+                                    <FaWarehouse className="h-10 w-10 text-orange-600 dark:text-orange-400 group-hover:text-white transition-colors" />
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Warehouse</h3>
+                                <p className="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">
+                                    List your storage facilities and manage inventory.
                                 </p>
                             </div>
                         </div>
