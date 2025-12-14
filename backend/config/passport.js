@@ -2,11 +2,16 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require('../models/User');
 
 module.exports = function (passport) {
+    const callbackURL = process.env.NODE_ENV === 'production'
+        ? 'https://agriconnect-mkkv.onrender.com/api/auth/google/callback'
+        : '/api/auth/google/callback';
+
     passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: "/api/auth/google/callback",
-        passReqToCallback: true
+        callbackURL: callbackURL,
+        passReqToCallback: true,
+        proxy: true // trust the proxy
     },
         async (req, accessToken, refreshToken, profile, done) => {
             try {
